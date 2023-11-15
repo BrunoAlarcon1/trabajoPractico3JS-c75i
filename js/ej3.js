@@ -1,20 +1,25 @@
-/* let dados = [];
-let resultados = [];
+const resultadosPosibles = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let apariciones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 for (let i = 0; i < 50; i++) {
-  let dado1 = Math.floor(Math.random() * (6 - 1) + 1);
-  let dado2 = Math.floor(Math.random() * (6 - 1) + 1);
-  console.log(dado1);
-  console.log(dado2);
+  let dado1 = Math.floor(Math.random() * 6) + 1;
+  let dado2 = Math.floor(Math.random() * 6) + 1;
   let resultadoParcial = dado1 + dado2;
   console.log(resultadoParcial);
-  resultados.push(resultadoParcial);
-  for(let j =0;j<resultadoParcial.length)
-
+  for (let j = 0; j < resultadosPosibles.length; j++) {
+    if (resultadoParcial === resultadosPosibles[j]) {
+      apariciones[j] += 1;
+    }
+  }
 }
 
-console.log(resultados.length)
- */
+console.log(apariciones);
+document.write(`<table border="1">`);
+document.write(`<tr><th>Suma</th><th>Apariciones</th></tr>`);
+for (let i = 0; i < resultadosPosibles.length; i++) {
+  document.write(`<tr><td>${resultadosPosibles[i]}</td><td>${apariciones[i]}</td></tr>`);
+}
+document.write(`</table>`);
 
 
-// Función para simular el lanzamiento de un dado
+
